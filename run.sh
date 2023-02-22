@@ -127,8 +127,9 @@ elif [ "$1" == "init" ]; then
     ${CMD_DOCKER} up -d
 
 
-    ## node modulesインストール
-    #${CMD_DOCKER} exec ${APP_SERVICE} npm ci
+    # node modulesインストール
+    ${CMD_DOCKER} exec ${APP_SERVICE} npm ci
+    ${CMD_DOCKER} exec ${APP_SERVICE} npm run build
 
 
     # mysql起動待ち

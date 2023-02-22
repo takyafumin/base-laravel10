@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use BugReport\UI\Http\Controller\BugReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+/**
+ * BugReport
+ */
+Route::group(['prefix' => 'bug-reports', 'as' => 'bug-reports.'], function () {
+    Route::get('/', [BugReportController::class, 'index'])->name('index');
+    Route::get('all', [BugReportController::class, 'all'])->name('all');
+    //Route::post('/', [BugReportController::class, 'store'])->name('store');
+    //Route::get('{bug_id}', [BugReportController::class, 'show'])->name('show');
+    //Route::post('{bug_id}/update', [BugReportController::class, 'update'])->name('update');
+    //Route::post('{bug_id}/delete', [BugReportController::class, 'destroy'])->name('destroy');
+});
+
+require __DIR__ . '/auth.php';

@@ -69,3 +69,8 @@ git clone [リポジトリURL]
 ```
 
 ※`run.sh`に開発によく使うコマンドが定義されています。
+
+---
+
+予防に勝る防御なし
+https://speakerdeck.com/twada/growing-reliable-code-phperkaigi-2022
