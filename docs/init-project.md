@@ -49,3 +49,31 @@ php artisan ide-helper:model --nowrite
 
 exit
 ```
+
+## 日本語化
+
+### 設定変更, app/config/app.php
+
+- timezone
+- locale
+- faker_locale
+
+### langリソース
+
+以下のコマンドを実行してlangリソースをpublishする
+
+```bash
+./run.sh bash
+
+php artisan lang:publish
+```
+
+以下のリポジトリにあるリソースファイルを流用する
+
+https://github.com/askdkc/breezejp
+
+- lang/ja.json
+- lang/ja/auth.php
+- lang/ja/pagination.php
+- lang/ja/passwords.php
+- lang/ja/validation.php
