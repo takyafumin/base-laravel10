@@ -14,6 +14,9 @@ Laravel10 Base プロジェクト
 - [構築](#-構築)
   - [管理者向け](#-管理者向け)
   - [開発者向け](#-開発者向け)
+- [勉強内容](#-勉強内容)
+  - [参考資料](#-参考資料)
+  - [検索コマンド](#-検索コマンド)
 
 <!-- /code_chunk_output -->
 
@@ -72,5 +75,24 @@ git clone [リポジトリURL]
 
 ---
 
-予防に勝る防御なし
-https://speakerdeck.com/twada/growing-reliable-code-phperkaigi-2022
+## 勉強内容
+
+サンプルソースを通じて以下を経験する
+
+- レイヤーの有無によるテスト性(作りやすさ、直しやすさ）の違い
+- レイヤーの有無による保守性の違い
+
+### 参考資料
+
+* 予防に勝る防御なし
+  - https://speakerdeck.com/twada/growing-reliable-code-phperkaigi-2022
+
+### 検索コマンド
+
+```bash
+# BugReportController::index()
+curl -X GET localhost/bug-reports/ | jq
+
+# BugReportController::all()
+curl -X GET localhost/bug-reports/all | jq
+```

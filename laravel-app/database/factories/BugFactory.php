@@ -19,6 +19,9 @@ class BugFactory extends Factory
      */
     public function definition(): array
     {
+        if ((User::all())->count() === 0) {
+            User::factory()->create();
+        }
         $now         = CarbonImmutable::now();
         $user_id     = $this->faker->randomElement(User::all()->pluck('name', 'id')->keys());
         $status      = $this->faker->randomElement(collect(Status::cases())->pluck('name', 'value')->keys()->toArray());
